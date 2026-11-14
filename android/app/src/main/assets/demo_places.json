@@ -1,0 +1,26 @@
+{
+ "source": "gilzikim-server /v1/places (OpenStreetMap Nominatim), for the scripted demo commute",
+ "places": [
+  {
+   "lat": 37.519869,
+   "lon": 127.020047,
+   "name": "신사동 강남대로162길",
+   "jurisdiction": "local",
+   "agency": "강남구청"
+  },
+  {
+   "lat": 37.513629,
+   "lon": 127.022514,
+   "name": "논현동 강남대로136길",
+   "jurisdiction": "local",
+   "agency": "강남구청"
+  },
+  {
+   "lat": 37.50755,
+   "lon": 127.03188,
+   "name": "논현동 논현로111길",
+   "jurisdiction": "local",
+   "agency": "강남구청"
+  }
+ ]
+}

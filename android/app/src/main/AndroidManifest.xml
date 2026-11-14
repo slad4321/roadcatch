@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Pleos SDK: location. Runtime permission on the emulator: it must be requested, not just declared. -->
+    <uses-permission android:name="pleos.car.permission.FUSED_LOCATION" />
+
+    <!--
+        Pleos Vehicle SDK read permissions.
+        Declaring a permission Pleos has not approved fails app review, so this list must match
+        what is agreed with Pleos before submission.
+        Checked against the SDK binary (Vehicle 2.3.2) and the emulator on 2026-11-08:
+        CAR_DRIVE: steering angle, brake pedal, gear. CAR_LIGHTS: turn signal.
+        PRIVATE_CAR_SAFETY: telltales (ICY_ROAD, ESC, ABS, TPMS...) and tire pressure values.
+        It is "normal" level on the emulator, but the PRIVATE_ prefix suggests Pleos approval is
+        needed on real vehicles. CAR_SAFETY only covers the low tire pressure flag.
+    -->
+    <uses-permission android:name="pleos.car.permission.CAR_DRIVE" />
+    <uses-permission android:name="pleos.car.permission.CAR_LIGHTS" />
+    <uses-permission android:name="pleos.car.permission.CAR_SAFETY" />
+    <uses-permission android:name="pleos.car.permission.PRIVATE_CAR_SAFETY" />
+
+    <!-- AAOS Car API: gear and speed -->
+    <uses-permission android:name="android.car.permission.CAR_POWERTRAIN" />
+    <uses-permission android:name="android.car.permission.CAR_SPEED" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="false"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Gilzikim">
+
+        <uses-library
+            android:name="android.car"
+            android:required="false" />
+
+        <!--
+            Not marked distractionOptimized on purpose: the post-drive map and confirmation screens
+            must be blocked by the system while the vehicle is driving.
+        -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:resizeableActivity="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
