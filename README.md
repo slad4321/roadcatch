@@ -11,6 +11,11 @@
 - [`apk/스웨이_로드캐치_release.apk`](apk/) (release, 서명됨, 약 16 MB)
 - 패키지 이름: `kr.gilzikim.app` (개발 당시 가칭 '길지킴'에서 유래)
 
+## 시연 영상
+
+- [`demo/roadcatch_demo.mp4`](demo/roadcatch_demo.mp4) (80초, 1408×792): Pleos Connect 에뮬레이터에서 release APK를 실제로 조작한 화면 녹화입니다. 차량 손상 의심 지점 확인 → 발생 상황 선택·취소·저장 → 이상 없음 → 지점 이동 → 완료 → 신고별 진행 상태 → 신고 다시 열기 순서입니다.
+- 녹화 스크립트: `android/e2e/record_demo.py`
+
 ## 실행 방법
 
 ### APK만으로 실행 (심사용, 서버 불필요)
